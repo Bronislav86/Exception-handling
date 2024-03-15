@@ -10,8 +10,8 @@ public class Ex001 {
     }
 
     public static void searchElement(int[] arr){
+        Scanner scanner = new Scanner(System.in);
         try {
-            Scanner scanner = new Scanner(System.in);
             System.out.println("Укажите индекс элемента массива, в который хотите записать значение 1");
             int index = scanner.nextInt();
             arr[index] = 1;
@@ -20,6 +20,8 @@ public class Ex001 {
         }
         catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Указан индекс за пределами массива");
+        }finally{
+            scanner.close();
         }
     }
 }
