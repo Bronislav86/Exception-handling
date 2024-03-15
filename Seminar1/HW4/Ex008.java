@@ -19,11 +19,14 @@ public class Ex008 {
         int rowLength = 0;
         int colLength = array.length;
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                rowLength++;
-            }
-            if (rowLength < colLength) {
-                throw new  RuntimeException("Строка " + toString(array[i]) + " короче столбца массива");
+
+            rowLength = array[i].length;
+            
+            // for (int j = 0; j < array[i].length; j++) {
+            //     rowLength++;
+            // }
+            if (rowLength != colLength) {
+                throw new  RuntimeException("Строка " + toString(array[i]) + " не равна столбцу массива");
             }
             rowLength = 0;
         }
